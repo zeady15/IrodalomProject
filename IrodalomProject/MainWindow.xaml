@@ -1,0 +1,23 @@
+﻿<Window x:Class="IrodalomProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IrodalomProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Button Name="btnBeolvas" Content="Beolvasás"></Button>
+            <Button Name="btnKiertekel" Content="Kiértékelés"></Button>
+            <TextBlock Name="tbxEredmeny" Height="373"></TextBlock>
+            <Button Name="btnKilepes" Content="Kilépés"></Button>
+        </StackPanel>
+        <TextBox  Name="tbxKerdes" Grid.Column="1" HorizontalAlignment="Left" Margin="13,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
