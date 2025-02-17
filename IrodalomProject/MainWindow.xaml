@@ -11,12 +11,30 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <DockPanel>
-            <Button DockPanel.Dock="Top" Content="Betöltés" Margin="5" Click="betoltes_Click"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="79*"></RowDefinition>
+            <RowDefinition Height="355"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+            <Button DockPanel.Dock="Top" Content="Betöltés" Margin="5" Click="betoltes_Click" ></Button>
             <Button DockPanel.Dock="Bottom" Content="Kilépés" Margin="5" Click="kilepes_Click"></Button>
             <Button DockPanel.Dock="Top" Content="Kiértékelés" Margin="5" Click="kiertekeles_Click"></Button>
             <TextBlock Text="Eredmény" Background="LightGray" Name="tbkEredmeny"></TextBlock>
         </DockPanel>
-
+        <TextBlock Grid.Column="1"
+                   Name="tbkKerdesSzovege"
+                   Grid.Row="0"
+                   Text="Szöveg"
+                   Background="LightGray"></TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <RadioButton GroupName="Valaszok" Name="ValaszA" Content="A)" Margin="5"></RadioButton>
+            <RadioButton GroupName="Valaszok" Name="ValaszB" Content="B)" Margin="5"></RadioButton>
+            <RadioButton GroupName="Valaszok" Name="ValaszC" Content="C)" Margin="5"></RadioButton>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Előző" Margin="5" Padding="5" Width="100" Click="elozo_Click"></Button>
+                <Button Content="Válasz mentése" Margin="5" Padding="5" Width="100" Click="mentes_Click"></Button>
+                <Button Content="Következő" Margin="5" Padding="5" Width="100" Click="kovetkezo_Click"></Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
