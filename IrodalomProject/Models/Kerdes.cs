@@ -23,5 +23,15 @@ namespace IrodalomProject.Models
         public string ValaszC { get; set; }
         public string HelyesValasz { get; set; }
         public string? FelhValasz { get; set; }
+
+        /// <summary>
+        /// A felhasználói válaszok ellenőrzése,ha nincs kitöltve akkor a válasz automatikusan hibás
+        /// </summary>
+        /// <returns></returns>
+
+        public bool ValaszEllenorzes()
+        {
+            return FelhValasz is null ? false: FelhValasz.ToLower() == HelyesValasz.ToLower();
+        }
     }
 }
