@@ -9,15 +9,14 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel>
-            <Button Name="btnBeolvas" Content="Beolvasás"></Button>
-            <Button Name="btnKiertekel" Content="Kiértékelés"></Button>
-            <TextBlock Name="tbxEredmeny" Height="373"></TextBlock>
-            <Button Name="btnKilepes" Content="Kilépés"></Button>
-        </StackPanel>
-        <TextBox  Name="tbxKerdes" Grid.Column="1" HorizontalAlignment="Left" Margin="13,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <DockPanel>
+            <Button DockPanel.Dock="Top" Content="Betöltés" Margin="5" Click="betoltes_Click"></Button>
+            <Button DockPanel.Dock="Bottom" Content="Kilépés" Margin="5" Click="kilepes_Click"></Button>
+            <Button DockPanel.Dock="Top" Content="Kiértékelés" Margin="5" Click="kiertekeles_Click"></Button>
+            <TextBlock Text="Eredmény" Background="LightGray" Name="tbkEredmeny"></TextBlock>
+        </DockPanel>
 
     </Grid>
 </Window>

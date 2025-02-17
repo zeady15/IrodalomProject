@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 namespace IrodalomProject
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Felhasználói felület BAL panel kialakítva
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -20,5 +20,22 @@ namespace IrodalomProject
         {
             InitializeComponent();
         }
+
+        private void betoltes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void kilepes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void kiertekeles_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+    
+
 }
