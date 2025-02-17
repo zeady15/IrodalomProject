@@ -8,14 +8,13 @@ namespace IrodalomProject.Models
 {
     internal class Kerdes
     {
-        public Kerdes(string kerdesszovege, string valaszA,string valaszB,string valaszC,string helyesValasz,string felhValasz)
+        public Kerdes(string kerdesszovege, string valaszA,string valaszB,string valaszC,string helyesValasz)
         {
            KerdesSzovege = kerdesszovege;
             ValaszA = valaszA;
             ValaszB = valaszB;
             ValaszC = valaszC;
             HelyesValasz = helyesValasz;
-            FelhValasz = felhValasz;
         }
         public string KerdesSzovege { get; set; }
         public string ValaszA { get; set; }
