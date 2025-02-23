@@ -88,12 +88,13 @@ namespace IrodalomProject
         }
         private void kilepes_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void kiertekeles_Click(object sender, RoutedEventArgs e)
         {
-
+            int helyesValaszok = kerdesek.Count(k => k.ValaszEllenorzes());
+            MessageBox.Show($"Helyes válaszok száma: {helyesValaszok} / {kerdesek.Count}", "Kiértékelés", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void elozo_Click(object sender, RoutedEventArgs e)
