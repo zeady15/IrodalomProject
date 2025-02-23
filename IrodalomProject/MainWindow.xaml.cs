@@ -35,7 +35,7 @@ namespace IrodalomProject
             try
             {
                 StreamReader sr = new StreamReader(filename, Encoding.UTF8);
-                while (sr.EndOfStream)
+                while (!sr.EndOfStream)
                 {
                     string kerdesSzovege = sr.ReadLine();
                     string valaszA = sr.ReadLine();
@@ -55,7 +55,7 @@ namespace IrodalomProject
         private void betoltes_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text files(*.txt)*.txt";
+            openFileDialog.Filter = "Text files(*.txt)|*.txt";
             if (openFileDialog.ShowDialog() == true)
             {
                 try
@@ -77,13 +77,15 @@ namespace IrodalomProject
         }
         private void MutatKerdes(int index)
         {
-            if (index >= 0 && index < kerdesek.Count)
+            if (kerdesek.Count >0)
             {
                 Kerdes aktualisKerdes = kerdesek[index];
+
                 tbkKerdesSzovege.Text = aktualisKerdes.KerdesSzovege;
-                ValaszA.Content = "A) " + aktualisKerdes.ValaszA;
-                ValaszB.Content = "B) " + aktualisKerdes.ValaszB;
-                ValaszC.Content = "C) " + aktualisKerdes.ValaszC;
+
+                ValaszA.Content =  aktualisKerdes.ValaszA;
+                ValaszB.Content =  aktualisKerdes.ValaszB;
+                ValaszC.Content =  aktualisKerdes.ValaszC;
             }
         }
         private void kilepes_Click(object sender, RoutedEventArgs e)
