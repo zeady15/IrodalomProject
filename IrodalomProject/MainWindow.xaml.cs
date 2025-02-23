@@ -12,6 +12,7 @@ using System.Linq;
 using System.IO;
 using IrodalomProject.Models;
 using Microsoft.Win32;
+using System;
 
 namespace IrodalomProject
 {
@@ -74,8 +75,16 @@ namespace IrodalomProject
                 }
             }
         }
-        private void MutatKerdes()
+        private void MutatKerdes(int index)
         {
+            if (index >= 0 && index < kerdesek.Count)
+            {
+                Kerdes aktualisKerdes = kerdesek[index];
+                tbkKerdesSzovege.Text = aktualisKerdes.KerdesSzovege;
+                ValaszA.Content = "A) " + aktualisKerdes.ValaszA;
+                ValaszB.Content = "B) " + aktualisKerdes.ValaszB;
+                ValaszC.Content = "C) " + aktualisKerdes.ValaszC;
+            }
         }
         private void kilepes_Click(object sender, RoutedEventArgs e)
         {
@@ -89,7 +98,11 @@ namespace IrodalomProject
 
         private void elozo_Click(object sender, RoutedEventArgs e)
         {
-
+            if (aktKerdesIndex > 0)
+            {
+                aktKerdesIndex--;
+                MutatKerdes(aktKerdesIndex);
+            }
         }
 
         private void mentes_Click(object sender, RoutedEventArgs e)
@@ -99,7 +112,11 @@ namespace IrodalomProject
 
         private void kovetkezo_Click(object sender, RoutedEventArgs e)
         {
-
+            if (aktKerdesIndex < kerdesek.Count - 1)
+            {
+                aktKerdesIndex++;
+                MutatKerdes(aktKerdesIndex);
+            }
         }
     }
     
